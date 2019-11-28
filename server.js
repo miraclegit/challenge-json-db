@@ -11,6 +11,9 @@ const app = express()
 app.use(bodyParser.json())
 
 app.get('/health', api.getHealth)
+app.put('/:studentId/:propertyName(*)', api.putStudentProperty)
+app.get('/:studentId/:propertyName(*)', api.getStudentProperty)
+app.delete('/:studentId/:propertyName(*)', api.deleteStudentProperty)
 
 app.use(middleware.handleError)
 app.use(middleware.notFound)
